@@ -1,0 +1,2 @@
+RNA1{[dR](C)[sP].[dR](A)[sP].[dR](A)}|CHEM1{[*]SCCCc1ccccc1|$_R1;;;;;;;;;;$|}$PEPTIDE1,CHEM1,C:R3-1:R1$G1(PEPTIDE1+PEPTIDE2)$"annoblabla"$V2.0
+PEPTIDE2{[dR](C)[sP].[dR](A)[sP].[dR](A)}|CHEM2{[*]SCCCc1ccccc1|$_R1;;;;;;;;;;$|}$PEPTIDE2,CHEM2,C:R3-1:R1$G1(PEPTIDE1+PEPTIDE2)$"annoblabla"$V2.0

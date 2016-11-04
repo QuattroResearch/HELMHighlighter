@@ -1,0 +1,72 @@
+
+# A hash mark ('#') in the first position of a line starts a comment up to the end of line (the line will be ignored).
+# Syntactical structure:
+# No highlighting: <category> NO_HIGHLIGHTING, e.g. POLYMER_SECTION_PEPTIDE_ID   NO_HIGHLIGHTING
+# Highlighting: <category> <keyword> <value>,  e.g. POLYMER_SECTION_PEPTIDE_ID   FONTSIZE 16
+# Insert at least one blank or TAB before each keyword or value.
+
+# HTML color code values: all possible #<6_digit_HTML_colorcode> sequences will be accepted.
+#   red:    #ff0000 (alias: RED)
+#   green:  #00b050 (alias: GRE)  # (darker green)
+#   blue:   #00b0f0 (alias: BLU)  # (darker blue)
+#   yellow: #ffc000 (alias: YEL)
+#   gray:   #808080 (alias: GRY)
+#   black:  #000000 (alias: BLK)
+#
+# Specification of color tags:  COLOR <color_code_value>. For example, a red color tag: COLOR RED, or alternatively COLOR #ff0000
+# Specification of font sizes:  FONTSIZE 10 (for a 10 Pt font), FONTSIZE 16 (for a 16 Pt font)
+# Specification of font styles: FONTSTYLE B (bold), FONTSTYLE I (italic)
+# Default font size: 12 pt, default color: #000000 (black)
+
+# EXAMPLES:
+#DEFAULT_SECTION_SEPARATOR               FONTSTYLE   B   # (bold)
+#POLYMER_SECTION_RNA_ID                  FONTSTYLE   I   # (italic)
+#POLYMER_SECTION_BRANCH_MONOMER_ID       FONTSIZE    16
+#POLYMER_SECTION_PEPTIDE_ID              COLOR       RED
+#POLYMER_SECTION_RNA_ID                  COLOR       #00b050
+#POLYMER_SECTION_CHEM_ID                 COLOR       GRE
+#POLYMER_SECTION_BLOB_ID                 COLOR       YEL
+# applying multiple highlighting cumulates HTML attributes:
+#POLYMER_SECTION_RNA_ID                  FONTSTYLE   I   # (first step: apply italic)
+#POLYMER_SECTION_RNA_ID                  FONTSTYLE   B   # (second step: keep italic and apply bold)
+
+#
+# Config section
+#
+DEFAULT_FONTSIZE                         FONTSIZE    12
+DEFAULT_COLOR                            COLOR       #000000  # black
+DEFAULT_SECTION_SEPARATOR                FONTSIZE    20
+#
+#
+POLYMER_SECTION_PEPTIDE_ID               FONTSIZE    16
+POLYMER_SECTION_RNA_ID                   COLOR       GRE
+POLYMER_SECTION_RNA_ID                   FONTSTYLE   B
+POLYMER_SECTION_RNA_ID                   FONTSIZE    20
+POLYMER_SECTION_CHEM_ID                  COLOR       YEL
+POLYMER_SECTION_BLOB_ID                  COLOR       GRY
+POLYMER_SECTION_SEPARATOR_PIPE           FONTSIZE    16
+POLYMER_SECTION_BRANCH_MONOMER_ID        COLOR       RED
+POLYMER_SECTION_BRANCH_MONOMER_ID        FONTSTYLE   B
+POLYMER_SECTION_BRANCH_MONOMER_ID        FONTSTYLE   I
+POLYMER_SECTION_MULTICHAR_MONOMER_ID     COLOR       BLU
+POLYMER_SECTION_MONOMER_SEPARATOR_DOT    FONTSIZE    16
+#
+CONNECTION_SECTION_PEPTIDE_ID            FONTSIZE    8
+CONNECTION_SECTION_RNA_ID                NO_HIGHLIGHTING
+CONNECTION_SECTION_CHEM_ID               NO_HIGHLIGHTING
+CONNECTION_SECTION_BLOB_ID               NO_HIGHLIGHTING
+CONNECTION_SECTION_SEPARATOR_PIPE        NO_HIGHLIGHTING
+#
+GROUPING_SECTION_GROUP_ID                FONTSTYLE   B
+GROUPING_SECTION_PEPTIDE_ID              NO_HIGHLIGHTING
+GROUPING_SECTION_RNA_ID                  NO_HIGHLIGHTING
+GROUPING_SECTION_CHEM_ID                 NO_HIGHLIGHTING
+GROUPING_SECTION_BLOB_ID                 NO_HIGHLIGHTING
+GROUPING_SECTION_SEPARATOR_PIPE          NO_HIGHLIGHTING
+#
+EXTANNOT_SECTION_PEPTIDE_ID              FONTSTYLE   I
+EXTANNOT_SECTION_RNA_ID                  NO_HIGHLIGHTING
+EXTANNOT_SECTION_CHEM_ID                 NO_HIGHLIGHTING
+EXTANNOT_SECTION_BLOB_ID                 NO_HIGHLIGHTING
+#
+
