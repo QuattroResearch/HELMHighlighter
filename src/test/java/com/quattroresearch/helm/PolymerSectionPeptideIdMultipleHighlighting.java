@@ -1,8 +1,10 @@
-package de.lucilla.helm;
+package com.quattroresearch.helm;
 
 import java.io.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
+
+import com.quattroresearch.helm.HelmHighlighter;
 
 public class PolymerSectionPeptideIdMultipleHighlighting {
 	// leadInFull: starting HTML sequence, leadOut: closing HTML sequence in the output HTML file

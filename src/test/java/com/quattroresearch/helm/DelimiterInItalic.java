@@ -1,10 +1,12 @@
-package de.lucilla.helm;
+package com.quattroresearch.helm;
 
 import java.io.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class SectionDelimiterConfig {
+import com.quattroresearch.helm.HelmHighlighter;
+
+public class DelimiterInItalic {
 	// leadInFull: starting HTML sequence, leadOut: closing HTML sequence in the output HTML file
 	String leadInPart1	= "<html>\n<head>\n<meta charset=\"UTF-8\">\n<font style=\"font-size: ";
 	String leadInPart2	= HelmHighlighter.DEFAULT_FONTSIZE;
@@ -16,10 +18,10 @@ public class SectionDelimiterConfig {
 	public void test() throws Exception {
 		String configFileName = "/tmp/HHConfigSectionDelimiter.txt";
 		PrintWriter printWriter = new PrintWriter(configFileName); // create a new simple config file for this test
-		printWriter.println("DEFAULT_SECTION_SEPARATOR FONTSTYLE B"); // consisting of a single line		
+		printWriter.println("DEFAULT_SECTION_SEPARATOR FONTSTYLE I"); // consisting of a single line		
 		printWriter.close();
 		
-		String sectionSeparator = "<b>$</b>";		
+		String sectionSeparator = "<i>$</i>";		
 		StringWriter stringWriter = new StringWriter();
 		printWriter = new PrintWriter(stringWriter);
 		String helmString = new String("PEPTIDE1{C.Y.I.Q.N.C.P.L.G.[am]}$PEPTIDE1,PEPTIDE1,1:R3-6:R3$$$V2.0");
@@ -41,4 +43,5 @@ public class SectionDelimiterConfig {
 	}
 
 }
+
 

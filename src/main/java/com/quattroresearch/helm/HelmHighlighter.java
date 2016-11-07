@@ -1,4 +1,4 @@
-package de.lucilla.helm;
+package com.quattroresearch.helm;
 
 import java.io.*;
 import java.util.regex.*;
