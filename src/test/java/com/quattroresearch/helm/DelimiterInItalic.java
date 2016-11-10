@@ -8,15 +8,15 @@ import com.quattroresearch.helm.HelmHighlighter;
 
 public class DelimiterInItalic {
 	// leadInFull: starting HTML sequence, leadOut: closing HTML sequence in the output HTML file
-	String leadInPart1	= "<html>\n<head>\n<meta charset=\"UTF-8\">\n<font style=\"font-size: ";
+	String leadInPart1	= "<html>" + System.lineSeparator() +"<head>" + System.lineSeparator() +"<meta charset=\"UTF-8\">" + System.lineSeparator() +"<font style=\"font-size: ";
 	String leadInPart2	= HelmHighlighter.DEFAULT_FONTSIZE;
-	String leadInPart3	= "pt\">\n</head>\n<body>\n";
+	String leadInPart3	= "pt\">" + System.lineSeparator() +"</head>" + System.lineSeparator() +"<body>" + System.lineSeparator() +"";
 	String leadInFull	= leadInPart1 + leadInPart2 + leadInPart3;	
-	String leadOut		= "</body>\n</html>";
+	String leadOut		= "</body>" + System.lineSeparator() +"</html>";
 
 	@Test
 	public void test() throws Exception {
-		String configFileName = "/tmp/HHConfigSectionDelimiter.txt";
+		String configFileName = "src/test/resources/HHConfigSectionDelimiter.txt";
 		PrintWriter printWriter = new PrintWriter(configFileName); // create a new simple config file for this test
 		printWriter.println("DEFAULT_SECTION_SEPARATOR FONTSTYLE I"); // consisting of a single line		
 		printWriter.close();
@@ -38,7 +38,7 @@ public class DelimiterInItalic {
 		printWriter.close();
 		//System.out.println("stringWriter=\n" + stringWriter.toString()); System.out.println("assertEquals=\n" + leadInFull + expectedHelmString + "\n" + leadOut);		
 		// assert that the HELM2 string has '$' delimiters in boldface in the output HTML file:
-		assertEquals(leadInFull + expectedHelmString + "\n"  + leadOut, stringWriter.toString());
+		assertEquals(leadInFull + expectedHelmString + System.lineSeparator()   + leadOut, stringWriter.toString());
 		
 	}
 

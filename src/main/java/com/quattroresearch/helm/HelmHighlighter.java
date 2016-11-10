@@ -232,26 +232,7 @@ public static void processHelmString(String helmString, PrintWriter pw) throws I
 		System.out.println("Helm string syntax check failed, input helmstring and toHELM2 outputString differ, quit working");
 		return;
 	}
-	// End code depending on Helm2Parser
 
-	// If the dependency between the Highlighter and the HelmParser is undesired and no syntax check is necessary, use the following
-	// code (i.e., you can completely remove the above section with all references to HELM2Notation, ParserHELM2, JDOMException etc).
-	// Here, we obtain the substrings of the individual sections from the input by identifying the dollar characters that serve as
-	// section delimiters (as opposed to those of a SMILES-string).
-	// The xxxEndIndex variables will contain the indices to the pertaining closing '$' characters of the respective sections.
-	// Subtract 1 from the xxxEndIndex variables to start the next backward search one character BEFORE the previously found '$'.
-	// On cutting out the substrings of the individual sections, add 1 to skip the previous '$' delimiter.
-
-	/* // Begin Helm2Parser-independent code
-	extAnnotEndIndex		= helmString.lastIndexOf('$'); // the position of the last '$' in the whole HELM2-string
-	groupingEndIndex		= helmString.lastIndexOf('$', extAnnotEndIndex - 1);
-	connectionsEndIndex		= helmString.lastIndexOf('$', groupingEndIndex - 1);
-	simplePolymersEndIndex	= helmString.lastIndexOf('$', connectionsEndIndex - 1);
-	simplePolymerSect		= helmString.substring(0, simplePolymersEndIndex);
-	connectionsSect			= helmString.substring(simplePolymersEndIndex + 1, connectionsEndIndex);
-	groupingSect			= helmString.substring(connectionsEndIndex + 1, groupingEndIndex);
-	extAnnotSect			= helmString.substring(groupingEndIndex + 1, extAnnotEndIndex);
-	// End Helm2Parser-independent code */
 
 	log("simplePolymerSect=" + simplePolymerSect);
 	log("connectionsSect=" + connectionsSect);
