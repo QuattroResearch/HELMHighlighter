@@ -20,7 +20,7 @@ import java.io.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import com.quattroresearch.helm.HelmHighlighter;
+import com.quattroresearch.helm.HELMHighlighter;
 
 public class DefaultFontsizeConfig {
 	// leadInFull: starting HTML sequence, leadOut: closing HTML sequence in the output HTML file
@@ -43,8 +43,8 @@ public class DefaultFontsizeConfig {
 		String expectedHelmString = helmString; // expect that the Highlighter will not change the helmstring
 		printWriter.print(leadInFull);
 		try {
-			HelmHighlighter.setupHlConfigEntries(configFileName);
-			HelmHighlighter.processHelmString(helmString, printWriter);
+			HELMHighlighter.setupHlConfigEntries(configFileName);
+			HELMHighlighter.processHelmString(helmString, printWriter);
 		} catch (Exception e) {
 			System.out.println(e);
 		}

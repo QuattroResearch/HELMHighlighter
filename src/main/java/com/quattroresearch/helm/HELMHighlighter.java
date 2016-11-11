@@ -39,7 +39,7 @@ class HlConfigEntry {
 	}
 }
 
-public class HelmHighlighter {
+public class HELMHighlighter {
 	final static String DEFAULT_COLOR = "#000000"; // Black
 	final static String DEFAULT_FONTSIZE = "12";
 	

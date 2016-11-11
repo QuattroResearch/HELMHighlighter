@@ -20,12 +20,12 @@ import java.io.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import com.quattroresearch.helm.HelmHighlighter;
+import com.quattroresearch.helm.HELMHighlighter;
 
 public class DelimiterInItalic {
 	// leadInFull: starting HTML sequence, leadOut: closing HTML sequence in the output HTML file
 	String leadInPart1	= "<html>" + System.lineSeparator() +"<head>" + System.lineSeparator() +"<meta charset=\"UTF-8\">" + System.lineSeparator() +"<font style=\"font-size: ";
-	String leadInPart2	= HelmHighlighter.DEFAULT_FONTSIZE;
+	String leadInPart2	= HELMHighlighter.DEFAULT_FONTSIZE;
 	String leadInPart3	= "pt\">" + System.lineSeparator() +"</head>" + System.lineSeparator() +"<body>" + System.lineSeparator() +"";
 	String leadInFull	= leadInPart1 + leadInPart2 + leadInPart3;	
 	String leadOut		= "</body>" + System.lineSeparator() +"</html>";
@@ -45,8 +45,8 @@ public class DelimiterInItalic {
 									sectionSeparator + sectionSeparator + sectionSeparator + "V2.0";
 		printWriter.print(leadInFull);
 		try {
-			HelmHighlighter.setupHlConfigEntries(configFileName);
-			HelmHighlighter.processHelmString(helmString, printWriter);
+			HELMHighlighter.setupHlConfigEntries(configFileName);
+			HELMHighlighter.processHelmString(helmString, printWriter);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
